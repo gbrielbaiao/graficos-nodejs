@@ -90,7 +90,7 @@ main {
     appearance: textfield;
 }
 
-.botao-gerar {
+#botao-gerar {
     background-color: #2563EB;
     color: #FFFFFF;
     border: none;
@@ -101,11 +101,11 @@ main {
     transition: background-color 0.3s;
 }
 
-.botao-gerar:hover {
+#botao-gerar:hover {
     background-color: #1E40AF;
 }
 
-.area-grafico {
+#area-grafico {
     height: 300px;
     border: 2px dashed #E5E7EB;
     border-radius: 8px;
@@ -136,4 +136,9 @@ footer {
     .secao-gerador, .exibicao-grafico {
         padding: 1rem;
     }
+}
+
+canvas {
+    width: 98%;
+    height: 98%;
 }
