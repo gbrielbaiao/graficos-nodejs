@@ -1,0 +1,43 @@
+<html lang="pt_br"><head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Gráficos</title>
+</head>
+<body>
+    <header>
+        <h1>Gerador de Gráficos</h1>
+    </header>
+    <main>
+        <section class="secao-gerador">
+            <h2>Gerar Novo Gráfico</h2>
+            <div class="grupo-formulario">
+                <label for="quantidade-itens">Quantidade de Itens:</label>
+                <input type="number" id="quantidade-itens" min="1" max="20" placeholder="Ex: 5">
+
+                <label for="quantidade-grupos">Quantidade de Grupos:</label>
+                <input type="number" id="quantidade-grupos" min="1" max="10" placeholder="Ex: 3">
+                
+                <label for="tipo-grafico">Tipo de Gráfico:</label>
+                <select id="tipo-grafico">
+                    <option value="bar">Barras</option>
+                    <option value="line">Linha</option>
+                    <option value="pie">Pizza</option>
+                </select>
+            </div>
+
+            <button class="botao-gerar">Gerar Gráfico</button>
+        </section>
+
+        <section class="exibicao-grafico">
+            <h2>Gráfico Gerado</h2>
+            <div class="area-grafico">
+                <p>Seu gráfico aparecerá aqui após ser criado.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© Gerador de Gráficos</p>
+    </footer>
+
+</body></html>
