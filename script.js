@@ -17,6 +17,29 @@ function gerar_infomacoes(qtd_itens, qtd_grupos){
     return data;
 }
 
+function exibir_grafico(grafico, tipo, data) {
+    let chart = new Chart(grafico, {
+        type: tipo,
+        data: {
+            labels: data.grupos,
+            datasets: [{
+                label: 'Tamanho dos grupos',
+                data: data.tamanho,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+        
+    });
+    
+}
+
 document.getElementById('botao-gerar')
 .addEventListener('click', () => {
     const area_grafico = document.getElementById('area-grafico');
@@ -26,32 +49,16 @@ document.getElementById('botao-gerar')
     try {
         const quantidade_itens = document.getElementById('quantidade-itens').value;
         const quantidade_grupos = document.getElementById('quantidade-grupos').value; 
+        const tipo_grafico = document.getElementById('tipo-grafico').value;
         if (!quantidade_itens || !quantidade_grupos) {
             throw Error();
         }
 
         const data = gerar_infomacoes(quantidade_itens, quantidade_grupos);
-
         const grafico = document.getElementById('grafico');
 
-        new Chart(grafico, {
-            type: 'bar',
-            data: {
-                labels: data.grupos,
-                datasets: [{
-                    label: 'Tamanho dos grupos',
-                    data: data.tamanho,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        exibir_grafico(grafico, tipo_grafico, data);
+        
     } catch (err) {
         window.alert('Algo deu errado. Verifique os valores digitados.')
     }
