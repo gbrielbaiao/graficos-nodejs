@@ -79,6 +79,52 @@ main {
     resize: vertical;
 }
 
+/* Checkboxes de grupos */
+.grupo-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: #F1F5F9;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 0.5rem 0.85rem;
+    cursor: pointer;
+    font-weight: normal;
+    color: #0F172A;
+    transition: background-color 0.2s, border-color 0.2s;
+    user-select: none;
+}
+
+.checkbox-item:hover {
+    background-color: #DBEAFE;
+    border-color: #2563EB;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563EB;
+    cursor: pointer;
+    margin: 0;
+}
+
+.checkbox-item input[type="checkbox"]:checked + span {
+    color: #2563EB;
+    font-weight: bold;
+}
+
+.checkbox-item:has(input:checked) {
+    background-color: #DBEAFE;
+    border-color: #2563EB;
+}
+
 /* Remove spinners dos inputs number */
 .grupo-formulario input[type="number"]::-webkit-outer-spin-button,
 .grupo-formulario input[type="number"]::-webkit-inner-spin-button {
